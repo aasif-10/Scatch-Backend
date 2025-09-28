@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const path = require("path");
 const userModel = require("./models/user-model");
 const productModel = require("./models/product-model");
+const ownerModel = require("./models/owner-model");
 const db = require("./config/mongoose-connection");
 const ownersRouter = require("./routes/ownersRouter");
 const usersRouter = require("./routes/usersRouter");
