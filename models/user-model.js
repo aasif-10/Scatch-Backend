@@ -14,7 +14,6 @@ const userSchema = mongoose.Schema({
     default: [],
   },
   contact: Number,
-  isAdmin: Boolean,
   picture: String,
 });
 
