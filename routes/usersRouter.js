@@ -11,9 +11,15 @@ router.get("/", function (req, res) {
 router.post("/signup", signupUser);
 
 router.get("/signin", (req, res) => {
-  res.render("signin");
+  let error = req.flash("error");
+  res.render("signin", { error });
 });
 
 router.post("/signin", signinUser);
+
+router.get("/logout", (req, res) => {
+  res.clearCookie("token");
+  res.send("Logged out");
+});
 
 module.exports = router;
