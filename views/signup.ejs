@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body>
+
+    <div class="relative main w-full flex ">
+        <h1 class="absolute top-[20px] left-[30px] text-white text-[28px] font-semibold">Scatch</h1>
+        <div class="main-left w-[45%] h-screen bg-[#3b82f6] flex items-center justify-center">
+            <div class="left-container flex flex-col items-center gap-[15px] ">
+                <h1 class="text-[70px] font-bold text-white">Welcome Back!</h1>
+                <p class="text-white text-[16.5px] font-medium">To keep connected with us please login with your
+                    personal
+                    info</p>
+                <a class="text-white text-[16px] font-medium mt-[15px] px-[40px] py-[4px] border-[2px] border-white rounded-[30px]"
+                    href="/signin">SIGN
+                    IN</a>
+            </div>
+        </div>
+        <div class="main-right w-[55%] h-screen flex items-center justify-center  ">
+            <div class="right-container ">
+                <h1 class="font-bold text-[50px] mb-[30px]">Create Account</h1>
+                <div class="form-container">
+                    <form action="/signup" method="post" class="flex flex-col items-center gap-[10px]">
+                        <input
+                            class="bg-[#edebed] py-[8px] pl-[15px] pr-[160px] rounded-[6px] mb-[7px] text-[15px] outline-none"
+                            type="username" name="name" placeholder="Name" required>
+                        <input
+                            class="bg-[#edebed] py-[8px] pl-[15px] pr-[160px] rounded-[6px] mb-[7px] text-[15px] outline-none"
+                            type="email" name="email" placeholder="Email" required>
+                        <input
+                            class="bg-[#edebed] py-[8px] pl-[15px] pr-[160px] rounded-[6px]  text-[15px] outline-none"
+                            type="password" name="password" placeholder="Password" required>
+                        <input
+                            class="bg-[#3b81f9] text-white text-[16px] font-medium mt-[10px] px-[40px] py-[6px] border-[2px] border-white rounded-[30px] outline-none"
+                            type="submit" name="" id="" value="SIGN UP">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
