@@ -12,14 +12,16 @@ router.post("/signup", signupUser);
 
 router.get("/signin", (req, res) => {
   let error = req.flash("error");
-  res.render("signin", { error });
+  let success = req.flash("success");
+  res.render("signin", { error, success });
 });
 
 router.post("/signin", signinUser);
 
 router.get("/logout", (req, res) => {
   res.clearCookie("token");
-  res.send("Logged out");
+  req.flash("success", "Logout successfull!");
+  res.redirect("/users/signin");
 });
 
 module.exports = router;

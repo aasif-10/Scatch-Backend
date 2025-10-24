@@ -6,13 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
 <body>
     <div class="relative main w-full flex tracking-tighter">
-        <h1 class="absolute top-[20px] left-[30px] text-[#3c82f8] text-[28px] font-semibold">Scatch</h1>
+        <div class="absolute top-4 right-8 font-semibold  bg-red-500 text-white h-fit
+        px-[15px] py-[8px] rounded-[8px] text-[16px]">
+            <a href="/users/logout">Logout</a>
+        </div>
+        <h1 class="fixed top-[20px] left-[30px] text-[#3c82f8] text-[28px] font-semibold">Scatch</h1>
 
+        <div class="fixed top-0 left-0 h-screen w-[25vw]  tracking-tighter pt-[150px] pl-[50px] font-semibold
+        flex flex-col gap-[60px] ">
+
+            <div>
+                <h1>New Collection</h1>
+                <h1>All Products</h1>
+                <h1>Discounted Products</h1>
+            </div>
+            <div>
+                <h1>Filter by:</h1>
+                <h1 class="mt-[10px]">Availablity</h1>
+                <h1>Discount</h1>
+            </div>
+        </div>
+        <div class="w-[25vw]"></div>
+
+        <div class="main-right min-h-screen w-[75vw]  flex  gap-[40px] flex-wrap">
+
+            <% products.forEach(function(product){ %>
+                <div class="product-cart  w-[250px] h-[300px] mt-[100px] rounded-[8px] overflow-hidden">
+                    <div class="image w-[100%] h-[70%] ">
+                        <img class="w-full h-full object-cover"
+                            src="data:image/jpeg;base64,<%=product.image.toString('base64') %>" alt="">
+                    </div>
+                    <div
+                        class="w-[100%] h-[30%] bg-[#f3e5da] pt-[10px] pl-[20px] pr-[20px] text-[15px] flex items-center justify-between ">
+                        <div>
+                            <p class="product-name  text-[18px]">
+                                <%= product.name %>
+                            </p>
+                            <p class="product-price  text-[16px]">
+                                ₹ <%= product.price %>
+                            </p>
+                        </div>
+                        <div class="rounded-[50%] bg-white w-[37px] h-[37px] flex items-center justify-center"><i
+                                class="ri-add-line text-[16.5px]"></i></div>
+                    </div>
+
+                </div>
+                <% }) %>
+
+
+
+
+
+
+        </div>
 
     </div>
 
