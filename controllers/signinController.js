@@ -20,7 +20,7 @@ module.exports.signinUser = async (req, res) => {
         process.env.JWT_KEY
       );
       res.cookie("token", token);
-      res.send("You can login");
+      res.redirect("/shop");
     });
   } catch (err) {
     res.send(err.message);

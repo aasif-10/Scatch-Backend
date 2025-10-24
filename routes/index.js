@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/shop", isLoggedIn, (req, res) => {
-  res.send("index");
+  res.render("shop");
 });
 
 module.exports = router;

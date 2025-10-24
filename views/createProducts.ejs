@@ -11,65 +11,72 @@
 
 <body>
     <div class="relative main w-full flex tracking-tighter">
+        <% if (success && success.length> 0) { %>
+            <div
+                class="flash-msg absolute top-5 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 rounded-md bg-[#3d83f1]">
+                <span class="inline-block mt-1 mb-1 text-white">
+                    <%= success[0] %>
+                </span>
+            </div>
+            <% } %>
+                <h1 class="absolute top-[20px] left-[30px] text-[#3c82f8] text-[28px] font-semibold">Scatch</h1>
 
-        <h1 class="absolute top-[20px] left-[30px] text-[#3c82f8] text-[28px] font-semibold">Scatch</h1>
-
-        <div class="main-left h-screen w-[25vw]  pt-[110px] pl-[40px] flex flex-col gap-[20px]
+                <div class="main-left h-screen w-[25vw]  pt-[110px] pl-[40px] flex flex-col gap-[20px]
         tracking-tighter text-[17px] font-medium">
-            <h2>All Products</h2>
-            <h2>Create new product</h2>
-        </div>
-        <div class="main-right h-screen w-[75vw]  pt-[100px] pl-[30px] ">
-            <h1 class="font-semibold text-[28px]">Create New Product</h1>
-            <h1 class="font-semibold text-[22px] mt-[10px]">Product Details</h1>
+                    <h2>All Products</h2>
+                    <h2>Create new product</h2>
+                </div>
+                <div class="main-right h-screen w-[75vw]  pt-[100px] pl-[30px] ">
+                    <h1 class="font-semibold text-[28px]">Create New Product</h1>
+                    <h1 class="font-semibold text-[22px] mt-[10px]">Product Details</h1>
 
-            <form action="/owners/admin/create" method="post">
-                <div>
-                    <h2 class="mt-[25px] mb-[11px] font-medium">Product Image</h2>
-                    <input class="ml-[10px] file:mr-4 file:py-[5px] file:px-[12px]
+                    <form action="/products/create" method="post" enctype="multipart/form-data">
+                        <div>
+                            <h2 class="mt-[25px] mb-[11px] font-medium">Product Image</h2>
+                            <input class="ml-[10px] file:mr-4 file:py-[5px] file:px-[12px]
          file:rounded-[6px] file:border-0
          file:text-sm file:font-semibold
          file:bg-[#3c82f8] file:text-white
          hover:file:bg-[#2563eb]
          cursor-pointer" type="file" name="image" required>
-                </div>
+                        </div>
 
-                <div class="mt-[20px] ">
-                    <input
-                        class=" w-[380px] pl-[8px] py-[5px] rounded-[5px] mr-[10px] border-[1px] border-[#d5d5d5] outline-none font-semibold placeholder:text-gray-400 text-black"
-                        type="text" name="productName" placeholder="Product Name" required>
-                    <input
-                        class="  w-[380px] pl-[8px] py-[5px] rounded-[5px] border-[1px] border-[#d5d5d5] font-semibold outline-none placeholder:text-gray-400 text-black"
-                        type="number" name="productPrice" placeholder="Product Price" required>
-                    <input
-                        class=" w-[380px] pl-[8px] py-[5px] rounded-[5px] mt-[15px] border-[1px] border-[#d5d5d5] outline-none font-semibold placeholder:text-gray-400 text-black"
-                        type="number" name="productDiscount" placeholder="Discount Price" required>
-                </div>
+                        <div class="mt-[20px] ">
+                            <input
+                                class=" w-[380px] pl-[8px] py-[5px] rounded-[5px] mr-[10px] border-[1px] border-[#d5d5d5] outline-none font-semibold placeholder:text-gray-400 text-black"
+                                type="text" name="productName" placeholder="Product Name" required>
+                            <input
+                                class="  w-[380px] pl-[8px] py-[5px] rounded-[5px] border-[1px] border-[#d5d5d5] font-semibold outline-none placeholder:text-gray-400 text-black"
+                                type="number" name="productPrice" placeholder="Product Price" required>
+                            <input
+                                class=" w-[380px] pl-[8px] py-[5px] rounded-[5px] mt-[15px] border-[1px] border-[#d5d5d5] outline-none font-semibold placeholder:text-gray-400 text-black"
+                                type="number" name="productDiscount" placeholder="Discount Price" required>
+                        </div>
 
-                <div class="mt-[30px] text-[#b9b9bb]">
-                    <div>
-                        <h1 class="font-semibold text-black mb-[10px]">Panel Details</h1>
-                    </div>
-                    <input
-                        class=" w-[380px] pl-[8px] py-[5px] rounded-[5px] mr-[10px] border-[1px] border-[#d5d5d5] outline-none font-semibold placeholder:text-gray-400 text-black"
-                        type="text" name="backgroundColor" placeholder="Background Color" required>
-                    <input
-                        class="  w-[380px] pl-[8px] py-[5px] rounded-[5px] border-[1px] border-[#d5d5d5] font-semibold outline-none placeholder:text-gray-400 text-black"
-                        type="text" name="panelColor" placeholder="Panel Color" required>
-                    <input
-                        class=" w-[380px] pl-[8px] py-[5px] rounded-[5px] mt-[15px] border-[1px] border-[#d5d5d5] outline-none font-semibold placeholder:text-gray-400 text-black"
-                        type="text" name="textColor" placeholder="Text Color" required>
-                </div>
+                        <div class="mt-[30px] text-[#b9b9bb]">
+                            <div>
+                                <h1 class="font-semibold text-black mb-[10px]">Panel Details</h1>
+                            </div>
+                            <input
+                                class=" w-[380px] pl-[8px] py-[5px] rounded-[5px] mr-[10px] border-[1px] border-[#d5d5d5] outline-none font-semibold placeholder:text-gray-400 text-black"
+                                type="text" name="backgroundColor" placeholder="Background Color" required>
+                            <input
+                                class="  w-[380px] pl-[8px] py-[5px] rounded-[5px] border-[1px] border-[#d5d5d5] font-semibold outline-none placeholder:text-gray-400 text-black"
+                                type="text" name="panelColor" placeholder="Panel Color" required>
+                            <input
+                                class=" w-[380px] pl-[8px] py-[5px] rounded-[5px] mt-[15px] border-[1px] border-[#d5d5d5] outline-none font-semibold placeholder:text-gray-400 text-black"
+                                type="text" name="textColor" placeholder="Text Color" required>
+                        </div>
 
-                <div class="bg-[#3783f6] rounded-[5px] text-white font-medium w-fit
+                        <div class="bg-[#3783f6] rounded-[5px] text-white font-medium w-fit
                 px-[12px] py-[6px] mt-[10px]">
-                    <input type="submit" value="Create New Product">
+                            <input type="submit" value="Create New Product">
+                        </div>
+
+                    </form>
+
+
                 </div>
-
-            </form>
-
-
-        </div>
 
     </div>
 

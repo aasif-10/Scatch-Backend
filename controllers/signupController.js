@@ -25,7 +25,7 @@ module.exports.signupUser = async (req, res) => {
           process.env.JWT_KEY
         );
         res.cookie("token", token);
-        return res.send("Account created Succesfully!");
+        res.redirect("/shop");
       });
     });
   } catch (err) {

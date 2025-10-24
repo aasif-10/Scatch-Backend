@@ -26,11 +26,8 @@ router.get("/", function (req, res) {
 });
 
 router.get("/admin", (req, res) => {
-  res.render("createProducts");
-});
-
-router.post("/admin/create", (req, res) => {
-  res.send("received");
+  const success = req.flash("success");
+  res.render("createProducts", { success });
 });
 
 module.exports = router;
