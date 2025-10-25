@@ -6,7 +6,7 @@ module.exports.addToCart = async (req, res) => {
 
     if (user.cart.includes(req.params.id)) {
       req.flash("error", "Item already in cart.");
-      res.redirect("/shop");
+      return res.redirect("/shop");
     }
     user.cart.push(req.params.id);
     await user.save();

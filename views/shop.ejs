@@ -62,16 +62,17 @@
                         </div>
                         <div class="w-[25vw]"></div>
 
-                        <div class="main-right min-h-screen w-[75vw]  flex  gap-[40px] flex-wrap">
+                        <div class="main-right min-h-screen w-[75vw]  flex  gap-[40px] flex-wrap pt-[100px]">
 
                             <% products.forEach(function(product){ %>
-                                <div class="product-cart  w-[250px] h-[300px] mt-[100px] rounded-[8px] overflow-hidden">
-                                    <div class="image w-[100%] h-[70%] ">
-                                        <img class="w-full h-full object-cover"
+                                <div class="product-cart  w-[250px] h-[300px] mt-[50px] rounded-[8px] overflow-hidden">
+                                    <div style="background-color: #<%= product.bgColor %>;" class=" image w-[100%] 
+                                        h-[70%] flex items-center justify-center">
+                                        <img class=" w-[65%] h-[90%] object-cover"
                                             src="data:image/jpeg;base64,<%=product.image.toString('base64') %>" alt="">
                                     </div>
-                                    <div
-                                        class="w-[100%] h-[30%] bg-[#f3e5da] pt-[10px] pl-[20px] pr-[20px] text-[15px] flex items-center justify-between ">
+                                    <div style="background-color: #<%= product.panelColor %>; color: #<%= product.textColor %>;"
+                                        class="w-[100%] h-[30%]  pt-[10px] pl-[20px] pr-[20px] text-[15px] flex items-center justify-between font-semibold">
                                         <div>
                                             <p class="product-name  text-[18px]">
                                                 <%= product.name %>

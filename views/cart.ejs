@@ -37,9 +37,8 @@
                 <% } %>
                     <% user.cart.forEach(function(items){ %>
                         <div class=" cart-items w-full h-[250px] flex">
-                    <div
-                        class="left w-[230px] h-[230px] bg-yellow-500 ml-[30px] mt-[10px] rounded-[8px] overflow-hidden">
-                        <img class="w-full h-full object-cover"
+                    <div class="left w-[230px] h-[230px]  ml-[30px] mt-[10px] rounded-[8px] overflow-hidden">
+                        <img class="w-[65%] h-[90%] object-cover"
                             src="data:image/jpeg;base64,<%= items.image.toString('base64') %>" alt="">
                     </div>
                     <div class="right">
