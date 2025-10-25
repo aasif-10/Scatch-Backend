@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body>
+
+    <div class="main w-screen h-screen  tracking-tighter overflow-x-hidden">
+        <div class="absolute top-4 right-8 font-semibold  bg-red-500 text-white h-fit
+        px-[15px] py-[8px] rounded-[8px] text-[16px]">
+            <a href="/users/logout">Logout</a>
+        </div>
+
+        <div class="navbar-links flex items-center gap-[40px] absolute top-6 right-38">
+            <a href="/shop">
+                <h1>Shop</h1>
+            </a>
+            <a href="/order">
+                <h1>Order</h1>
+            </a>
+            <a href="/account">
+                <h1>My Account</h1>
+            </a>
+        </div>
+        <h1 class="text-[30px] font-semibold mt-[80px] ml-[100px]">Your Cart</h1>
+
+        <div class="cart-container w-[90%] min-h-screen  ml-[80px] mt-[40px] flex flex-col gap-[30px]">
+
+            <% if(user.cart.length===0){ %>
+                <h1 class="text-[20px] font-semibold mt-[30px] ml-[25px]"">No items added yet.</h1>
+                <% } %>
+                    <% user.cart.forEach(function(items){ %>
+                        <div class=" cart-items w-full h-[250px] flex">
+                    <div
+                        class="left w-[230px] h-[230px] bg-yellow-500 ml-[30px] mt-[10px] rounded-[8px] overflow-hidden">
+                        <img class="w-full h-full object-cover"
+                            src="data:image/jpeg;base64,<%= items.image.toString('base64') %>" alt="">
+                    </div>
+                    <div class="right">
+                        <h2 class="ml-[70px] mt-[10px] font-medium text-[20px]">Price Breakdown</h2>
+
+                        <div class="ml-[100px] mt-[15px] flex flex-col gap-[7px]  w-[400px] ">
+                            <div class="flex justify-between text-[15px]">
+                                <div class="flex flex-col gap-[7px]">
+                                    <h1>Total MRP</h1>
+                                    <h1>Discount</h1>
+                                    <h1>Platform Fee</h1>
+                                    <h1>Shipping Fee</h1>
+
+                                </div>
+                                <div class="flex flex-col gap-[7px]">
+                                    <h1>₹ <%= items.price %>
+                                    </h1>
+                                    <h1>₹ <%= items.discount %>
+                                    </h1>
+                                    <h1>₹ 20</h1>
+                                    <h1>FREE</h1>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex flex-row justify-between text-[15px] ml-[70px] mt-[30px] border-t-[1px] border-black pt-[10px]">
+                            <h1 class="font-semibold text-[18px]">Total Amount</h1>
+                            <h1 class="text-[18px] font-semibold text-[#00c950]">₹ <%= (items.price-items.discount) %>
+                            </h1>
+                        </div>
+                    </div>
+        </div>
+        <% }) %>
+
+
+
+
+
+    </div>
+    </div>
+
+    </div>
+    </div>
+
+
+</body>
+
+</html>

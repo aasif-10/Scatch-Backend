@@ -5,7 +5,7 @@ module.exports.createProducts = async (req, res) => {
     let {
       productName,
       productPrice,
-      discountPrice,
+      productDiscount,
       backgroundColor,
       panelColor,
       textColor,
@@ -15,7 +15,7 @@ module.exports.createProducts = async (req, res) => {
       image: req.file.buffer,
       name: productName,
       price: productPrice,
-      discount: discountPrice,
+      discount: productDiscount,
       bgColor: backgroundColor,
       panelColor: panelColor,
       textColor: textColor,
